@@ -20,18 +20,3 @@ Veamos el diagrama de clases del patrón:
 - La operación requiere datos que el objeto no conoce.
 - Desea mantener el estado dentro de las operaciones en múltiples objetos.
 
-### Diferencias entre el patrón strategy pattern y visitor pattern
-- El patrón estrategia representa una relación 1:many. 
-  - Donde se tiene un objeto al que se quiere aplicar múltiples operaciones (estrategias).
-Por ejemplo:
-Se tiene una clase Video que encapsula un video clip, y deseo comprimirlo usando diferentes algoritmos; para ello creamos múltiples clases estrategia.
-      MpegCompression
-      AviCompression
-      QuickTimeCompression
-- El patrón visitor representa una relación de many:many. 
-  - Que sucede si la aplicación crece y ahora no solo se incluye video sino también audio. Si se desea atacar el problema con el patrón estrategia se tendría que duplicar la clase de compresión uno para video y la otra para audio:
-      MpegVideoCompression
-      MpegAudioCompression
-  - Si uso el patron visitor, no tengo que duplicar clases; lo único que tengo que hacer es agregar un método:
-      MpegCompression::compressVideo(Video object)
-      MpegCompression::compressAudio(Audio object)
